@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>calculation
+        </title>
+    </head>
+    <body>
+        <label>Enter first operator</label><br>
+        <input type="text" id="op1"><br>
+        <label>Enter second operator </label><br>
+        <input type="text" id="op2"><br>
+        <label>Enter the operation to be performed</label><br>
+        <input type="text" id="operator"><br>
+        <button onclick="solve()">answer</button>
+        <p id="result"></p>
+    </body>
+    <script>
+        function solve()
+	{
+		let a = document.getElementById("op1").value
+        let b = document.getElementById("op2").value
+        let i = document.getElementById("operator").value
+        let x = a+i+b
+        try{
+        if(i=='/'&&b==0){
+            throw("divide by zero error.");
+        }}
+        catch(e){
+            alert("Error: "+e);
+        }
+
+		let y = eval(x)
+		document.getElementById("result").innerHTML = y
+	}
+    </script>
+</html>
